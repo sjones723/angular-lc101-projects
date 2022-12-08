@@ -1,0 +1,14 @@
+.chores{
+    color:rgb(60, 47, 107);
+    text-align: center;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h3{
+    text-decoration: underline;
+}
+
+li{
+ font-style: italic;
+}

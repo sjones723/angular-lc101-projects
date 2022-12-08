@@ -3,9 +3,19 @@ h3 {
 }
 
 img {
-
+max-width: 200px;
+max-height:200px;
+width:40%;
+height:auto;
+padding-bottom: 10px; 
 }
 
 .photos {
    text-align: center;
+}
+
+.photo-thumb-container{
+position:sticky;
+top:0;
+left:0;
 }

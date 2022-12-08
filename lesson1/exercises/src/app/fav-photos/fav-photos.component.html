@@ -1,6 +1,13 @@
 <div class="photos">
-   <h3>{{photosTitle}}</h3>
-   <img src="{{image1}}" alt="Oops! Missing photo!"> 
-   <img src="" alt="Oops! Missing photo!">  <br>
-   <img src="" alt="Oops! Missing photo!"> 
+  <h3>{{ photosTitle }}</h3>
+  <!-- To adjust the HTML to display one image per line, you can wrap each <img> element in a <div> and add a style attribute to the <img> elements to set the display property to block. This will cause each image to be displayed on a new line. -->
+  <div class="photo-thumb-container">
+    <img src="{{ image1 }}" alt="Oops! Missing photo!" />
+  </div>
+  <div class="photo-thumb-container">
+    <img src="{{ image2 }}" alt="Oops! Missing photo!" />
+  </div>
+  <div class="photo-thumb-container">
+    <img src="{{ image3 }}" alt="Oops! Missing photo!" />
+  </div>
 </div>
