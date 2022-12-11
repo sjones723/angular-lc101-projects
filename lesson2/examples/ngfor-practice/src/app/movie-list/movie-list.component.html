@@ -1,7 +1,17 @@
-<div class='movies'>
+<div class='movies' *ngIf = "movies.length > 3; else needMoreMovies">
     <h3>Movies to Watch</h3>
     <ol>
-        <li *ngFor = 'let movie of movies'>{{movie}}</li>
+       <li *ngFor = "let movie of movies">{{movie}}</li>
     </ol>
-</div>
+ </div>
 
+ <!-- <ng-template></ng-template> is a special Angular element. It contains content that might be required for a web page. When the else statement in line 1 executes, Angular searches for an ng-template block labeled with the matching variable name. Angular then ignores the original div tags and anything they contain, and it replaces that content with lines 9 - 14. -->
+
+ <ng-template #needMoreMovies>
+    <div class='movies'>
+       <h3>Not Enough Movies!</h3>
+       <p>You only have {{movies.length}} movies on your watch list!</p>
+       <p>What's up with that?</p>
+       <p>You need to purchase expensive popcorn more often.</p>
+    </div>
+ </ng-template>

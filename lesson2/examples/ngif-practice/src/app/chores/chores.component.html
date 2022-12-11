@@ -1,8 +1,10 @@
 <div class="chores">
     <h3>Chores</h3>
+    
     <ul>
         <li *ngFor = 'let chore of chores'>{{chore}}</li>
     </ul>
+    <p style="color:rgba(184, 41, 179, 0.806);" *ngIf="chores.length>finishedChores.length">"Work harder!"</p>
 </div>
 <hr>
 <div class="doneChores">
@@ -10,5 +12,18 @@
     <ul>
         <li *ngFor = 'let done of finishedChores'>{{done}}</li>
     </ul>
+    <p *ngIf="finishedChores.length === 0 || finishedChores.length+3>chores.length">"No allowance yet."</p>
 </div>
+<!-- Finally, if the chores array is empty AND finishedChores contains 4 or more items, display an h1 underneath the lists with the text "Ice cream treat!" Otherwise, display h3 and p elements that describe how to earn ice cream. -->
+<div class="iceCreamTreat" *ngIf="chores.length===0 && finishedChores.length >=4;else noTreatForYou">
+<h1>"Ice cream treat!"</h1>
+</div>
+
+<ng-template #noTreatForYou>
+    <div class="noTreatForYou">
+        <h3>To Earn An Ice Cream Treat:</h3>
+        <p>Complete {{chores.length}} more chores</p>
+        <p *ngIf="finishedChores.length<4">You need to complete a minimum of 4 chores, complete at least {{4-finishedChores.length}} more chores.</p>
+    </div>
+</ng-template>
 <hr>
